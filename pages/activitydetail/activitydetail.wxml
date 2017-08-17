@@ -1,0 +1,45 @@
+<!--logs.wxml-->
+<view class="container">
+	<view class="container-body space-content">
+	  <view class="space-top">
+	  	<view class="space-banner" bindtap="imgPreview">
+		  	<swiper
+		  	  autoplay="{{true}}" interval="{{4000}}" duration="{{1000}}" bindchange="setCurrent">
+		  	  <block wx:for="{{spaceimgs}}" wx:key="*this">
+		  	    <swiper-item>
+		  	      <image src="{{item}}" mode="aspectFill" class="slide-image"/>
+		  	    </swiper-item>
+		  	  </block>
+		  	</swiper>
+	  	  <view class="number-banner">
+	  	  	<text>{{currentIndex>9?currentIndex:'0'+currentIndex}}</text>
+	  	  	<text>/{{spaceimgs.length>9?spaceimgs.length:'0'+spaceimgs.length}}</text>
+	  	  </view>
+	  	</view>
+  	  <view class="space-info">
+  	  	<view class="space-title">{{activitydata.title}}</view>
+  	  	<view class="space-list">
+          <view class="space-item">
+            {{activitydata.depict}}
+  	  		</view>
+          <view class="space-item">
+  	  			<text class="text-left">主办机构：</text>
+  	  			<text class="text-right">{{activitydata.companyName}}</text>
+  	  		</view>
+  	  		<view class="space-item">
+  	  			<text class="text-left">发布时间：</text>
+  	  			<text class="text-right">{{activitydata.time}}</text>
+  	  		</view>
+  	  	</view>
+  	  </view>
+	  </view>
+	  <view class="space-block">
+	  	<view class="space-block-title">活动内容</view>
+	  	<view class="space-block-content">
+	  		<view class="space-passage">
+        {{activitydata.cnts}}
+        </view>
+	  	</view>
+  	</view>
+	</view>
+</view>

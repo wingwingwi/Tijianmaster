@@ -1,0 +1,37 @@
+<view class="container">
+
+<scroll-view  scroll-y="true"  class="page-body" bindscrolltolower="loadMore">
+  <swiper class="index-banner" indicator-dots="{{true}}"
+    autoplay="{{true}}" interval="{{4000}}" duration="{{1000}}">
+    <block wx:for="{{imgUrls}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{servsers}}{{item.fileUrl}}" mode="aspectFill" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+	<view class="index-menu">
+		<navigator class="index-menu-item" wx:for="{{indexmenu}}" wx:key="{{item.url}}" url="{{item.url}}" open-type="{{item.type}}" bindtap='{{item.moth}}'>
+			<image src="{{item.icon}}"></image>
+			<text>{{item.text}}</text>
+		</navigator>
+	</view>
+  <view bindtap="goToPict" >
+	  <image src="../../images/zhiyebing.png"  class="go-image"></image>
+  </view>
+	<view class="my-reserve-list">
+    <view class="my-item" bindtap="goTo">
+			<text>{{actTxt}}</text>
+	  </view>
+			<navigator class="my-reserve-item" wx:for="{{newsList}}" wx:key="{{item.id}}" url="{{item.url}}">
+				<view class="my-reserve-img">
+					<image src="{{servsers}}{{item.logo}}" mode="aspectFill"></image>
+				</view>
+				<view class="my-reserve-text">
+					<view class="my-reserve-title">{{item.title}}</view>
+					<view class="my-reserve-desc">{{item.depict}}</view>
+					<view class="my-reserve-time">{{item.time}}</view>
+				</view>
+			</navigator>
+	</view>
+  </scroll-view>
+</view>

@@ -1,0 +1,22 @@
+<view class="container">
+	<block class="container-body" scroll-y="true" bindscrolltoupper="onPullDownRefresh" scroll-top="{{scrolltop}}" bindscroll="scrollHandle" lower-threshold="50" bindscrolltolower="scrollLoading">
+    <view class="conference-list">
+			<navigator class="conference-item" wx:for="{{activitylist}}" wx:key="{{item.id}}" url="../activitydetail/activitydetail?id={{item.id}}">
+				<view class="conference-item-img">
+					<image src="{{servsers}}{{item.logo}}"  mode="aspectFill"></image>
+					<text class="hover1" data-status="{{item.status}}">{{item.status}}</text>
+				</view>
+				<view class="conference-item-text">
+					<view class="conference-item-title">{{item.title}}</view>
+					<view class="conference-item-info">
+						{{item.depict}}
+					</view>
+          <view class="activity-item-info">			
+            <text class="icon-time">{{item.time}}</text>
+					</view>				
+				</view>
+			</navigator>
+		</view>
+		<view class="gototop {{scrolltop>200?'active':''}}" bindtap="goToTop"></view>
+	</block>
+</view>

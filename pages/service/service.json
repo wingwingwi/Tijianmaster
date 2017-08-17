@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "推荐套餐",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+}

@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/activity/activity"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "我要体检",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  }
+}

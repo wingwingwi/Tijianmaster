@@ -1,0 +1,48 @@
+<!--导航条-->  
+<view class="navbar">  
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+</view>  
+  
+<!--首页-->  
+<view hidden="{{currentTab!==0}}">  
+  <view class="ar_cont">
+    <view class="title1">{{titleA}}</view>
+    <view class="title2">{{titleB}}</view>
+    <view>
+      <image class="ar_coverpath" src="../../images/sucai.png" ></image>
+    </view>
+    <view class="cont">
+      合肥康虹（职业）健康体检中心是经合肥市卫计委批准设置的医疗机构，
+      是安徽省第一家，也是唯一一家以职业病体检为主，同时开展健康体检、放射人员体检、从业人员资格体检等的大型综合性体检中心（相关资质一应俱全）
+      。位于合肥市环境优美、空气质量最优的大蜀山森林公园西麓的合肥高新科技产业集中区（望江西路与创新大道交口往北300米创新大厦，交通便利、停车十分方便）。一期投资1000多万元，建设面积1000多平方米。 
+      合肥康虹（职业）健康体检中心医护队伍力量雄厚，五名创始团队成员都是安徽医科大学84届临床医学和公共卫生专业毕业，
+      具有副主任医师以上职称，是全省唯一的专业医师领导专业队伍的体检中心。
+      体检中心大多数医师具备职业病诊断资质。医师队伍大多都具有中、高级职称，各科室负责人都是中级以上职称，具有二级以上医院的工作经验，并经过严格挑选和培训。 我们拥有国内一流的健康管理专家队伍，及北京，上海、广州、南京等省市相关大型三甲医疗机构的专家资源，以保障本中心VIP客户，享受国内一流专家的及时、高端优质服务。并与“康康在线”“名医主刀”等健康管理服务平台进行战略合作，完成在线查阅体检报告和专家咨询等健康管理服务。 合肥康虹（职业）健康体检中心设备配置一流，有西门子数字化医用X射线成像系统（DR）、飞利浦、迈瑞高档彩色多普勒超声诊断仪，希森美康全自动五分类血液分析仪、全自动生化分析仪、化学发光等全套检验设备、菲利普64排CT。并购置了目前省内一流的11米大型流动体检车（配备高千伏DR，数字化便携式彩超等）；电测听专用体检车等，
+      还有大型豪华交通车辆，为企事业单位提供上门体检和接、送服务。
+    </view>  
+  </view>
+</view>  
+<!--宣传片-->
+<view hidden="{{currentTab!==1}}"> 
+  <view class="ar_vod"> 
+    <video style="width:100%;" src="http://huxiao.oss-cn-shanghai.aliyuncs.com/Video001.mp4" binderror="videoErrorCallback"></video>
+  </view>
+</view>  
+<!--环境展示-->
+<view hidden="{{currentTab!==2}}">  
+  <view class="container">
+      <view class="container_imge"> <image src="../../images/hhh.jpg" bindtap="imgPreview"></image></view>
+      <view class="container_imge"> <image src="../../images/hhh.jpg" bindtap="imgPreview"></image></view>
+      <view class="container_imge"> <image src="../../images/hhh.jpg" bindtap="imgPreview"></image></view>
+      <view class="container_imge"> <image src="../../images/hhh.jpg" bindtap="imgPreview"></image></view>
+  </view>
+</view>  
+<!--联系我们-->
+<view hidden="{{currentTab!==3}}">  
+  <map id="map" longitude="117.135150" latitude="31.834260" scale="14" markers="{{markers}}"  show-location style="width: 100%; height: 180px;"></map>
+  <view class="ar_cont">
+   <view class="title1">合肥康虹（职业）健康体检中心</view>
+   <view class="title2">安徽省合肥市高新区创新大道2760号创新公寓商配A座3层C1（创新大道与云飞路东南角)</view>
+   <view class="title2"><button type="default" bindtap="calling">拨打电话</button></view>
+  </view>
+</view>  

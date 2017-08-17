@@ -1,0 +1,52 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/abouts/abouts",
+    "pages/space/space",
+    "pages/service/service",
+    "pages/servicedetail/servicedetail",
+    "pages/question/question",
+    "pages/property/property",
+    "pages/activity/activity",
+    "pages/activitydetail/activitydetail",
+    "pages/my/my",
+    "pages/addr/addr",
+    "pages/cart/cart",
+    "pages/orders/orders"
+  ],
+  "window":{
+    "backgroundTextStyle":"white",
+    "navigationBarBackgroundColor": "#228B22",
+    "navigationBarTitleText": "我要体检",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"images/shouye.png",
+      "selectedIconPath":"images/shouyefill.png"
+    }, 
+    {
+        "pagePath": "pages/abouts/abouts",
+        "text": "关于我们",
+        "iconPath": "images/biaoxing.png",
+        "selectedIconPath": "images/biaoxingfill.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "个人中心",
+      "iconPath":"images/yonghu.png",
+      "selectedIconPath":"images/yonghufill.png"
+    }],
+    "color":"#333",
+    "selectedColor":"#f7982a",
+    "backgroundColor":"#f6f6f6",
+    "borderStyle": "white"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  }
+}

@@ -1,0 +1,23 @@
+<view >
+  <view class="tab-nav">
+				<text wx:for="{{tabnav.tabitem}}" bindtap="setTab" class="{{showtab==index?'active':''}}" data-tabindex="{{index}}" data-type="{{item.type}}" wx:key="{{item.type}}">{{item.text}}</text>
+				<view class="tab-line" style="width:{{100/tabnav.tabnum}}%;transform:translateX({{100*showtab}}%);"></view>
+	</view>
+	<block class="container-body" scroll-y="true" scroll-top="{{scrolltop}}" bindscroll="scrollHandle" lower-threshold="50" bindscrolltolower="scrollLoading">
+		<view class="service-list">
+			<navigator class="service-item" wx:for="{{servicelist}}" wx:key="{{item.id}}" url="../servicedetail/servicedetail?id={{item.id}}">
+				<view class="service-img">
+					<image src="{{servsers}}{{item.logo}}" ></image>
+				</view>
+				<view class="service-text">
+					<view class="service-tite">{{item.title}}</view>
+					<view class="service-city">{{item.depict}}</view>
+          <view class="service-tags">
+					    	<text>￥{{item.price}}</text>
+					</view>
+				</view>
+			</navigator>
+		</view>
+		<view class="gototop {{scrolltop>200?'active':''}}" bindtap="goToTop"></view>
+	</block>
+</view>

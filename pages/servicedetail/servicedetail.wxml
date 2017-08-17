@@ -1,0 +1,96 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<view class="container">
+  <view class="pr-view-main">
+    <swiper class="swiper-wrap" indicator-dots autoplay indicator-active-color="{{colorValue}}">
+      <block wx:for="{{spaceimgs}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  <!-- 文本内容 -->
+    <view class="basic-info">
+      <view class="prod-title">
+        {{pro.title}}
+      </view>
+      <view class="prod-desc">
+        {{pro.depict}}
+      </view>
+      <view class="prod-price-wrap">
+        <view class="dis-price">
+          <text class="dollar">￥</text>
+          <text class="price">{{pro.price}}</text>
+        </view>
+        <view class="ori-price"></view>
+      </view>
+    </view>
+    <view class="prod-main">
+      <view class="navbar caption">  
+        <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
+      </view> 
+      <view class="con" hidden="{{currentTab!==0}}">
+          <template is="wxParse" data="{{wxParseData:msgTwo.nodes}}"/>
+        <!-- <image src="../../images/js.jpg" mode="widthFix"></image>
+        <image src="../../images/js2.jpg" mode="widthFix"></image> -->
+      </view>
+      <view class="con" hidden="{{currentTab!==1}}">
+           {{pro.notice}}
+      </view>
+    </view>
+  </view>
+  <!-- 按钮操作 -->
+  <view class="art-concern-btm">
+    <view class="concern-cart">
+      <view class="item" bindtap="bindGoIndex">
+        <image class="iconfont" src="../../images/callphone.png"></image>
+        <view class="title">拨打电话</view>
+      </view>
+      <view class="item">
+        <contact-button type="default-dark"  session-from="weapp">
+        </contact-button>
+        <view class="title">预约咨询</view>
+      </view>
+    </view>
+    <view class="add-cart" bindtap="showCartBox">加入购物车</view>
+    <view class="add-buy" bindtap="showBuyBox">立即购买</view>
+  </view>
+  <!-- 加入购物车 -->
+  <view class="add-cart-box fixed-box" wx:if="{{toggle}}">
+    <view class="layout">
+      <view class="close-wrap tr">
+        <view class="close-btn" bindtap="hideCartBox">x</view>
+      </view>
+      <view class="layout-info">
+        <image src="{{servsers}}{{pro.logo}}"></image>
+        <view class="pr-intro">
+          <view class="title lineText2">{{pro.title}}</view>
+          <view class="price">￥{{pro.price}}</view>
+        </view>
+      </view>
+      <view class="options">
+        <view class="options-tiem">
+          <view class="buy-num">购买数量：</view>
+          <view class="count-set">
+            <view class="sub" bindtap="reduceCount">
+              <text class="iconfont">-</text>
+            </view>
+            <view class="sub">
+              <input type="number" value="{{default_number}}" disabled="true" class="buy-couts"></input>
+            </view>
+            <view class="sub" bindtap="addCount">
+              <text class="iconfont">+</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <button class="add-cart-btn" bindtap="goods_add_cart">确定</button>
+    </view>
+    <view class="mask"></view>
+  </view>
+  <!-- 悬浮按钮 -->
+  <view class="tool-wrap">
+    <view class="tool-item" bindtap="bindGoCart">
+      <image class="iconfont" src="../../images/shopcar.png"></image>
+    </view>
+  </view>
+</view>
